@@ -40,7 +40,7 @@ def write_list_to_text_file(filename, input_list):
 start_time = time.time()
 
 
-filepath = "simulated-training-data-raw"
+filepath = "../simulated-training-data-raw"
 START_DATE = "2018-04-01" # adjust date here
 END_DATE = "2018-04-01" # adjust date here
 df = read_transaction_data(filepath, START_DATE, END_DATE)
@@ -48,6 +48,9 @@ df = read_transaction_data(filepath, START_DATE, END_DATE)
 # Splitting the data into features (X) and the target variable (y).
 X = df.drop(['TX_FRAUD', "TX_FRAUD_SCENARIO"], axis=1)  # Features: All columns except the ones containing actual data about fraud
 y = df['TX_FRAUD']  # Target variable: 'TX_FRAUD'
+
+
+
 
 
 clf = RandomForestClassifier()
